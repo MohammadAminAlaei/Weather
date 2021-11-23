@@ -1,0 +1,34 @@
+$margin-default-size: 8;
+$margin-items: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+.margin {
+  @each $items in $margin-items {
+    &-#{$margin-default-size * $items} {
+      margin: #{$margin-default-size * $items}px;
+    }
+
+    &-top-#{$margin-default-size * $items} {
+      margin-top: #{$margin-default-size * $items}px;
+    }
+
+    &-bottom-#{$margin-default-size * $items} {
+      margin-bottom: #{$margin-default-size * $items}px;
+    }
+
+    &-left-#{$margin-default-size * $items} {
+      margin-left: #{$margin-default-size * $items}px;
+    }
+
+    &-right-#{$margin-default-size * $items} {
+      margin-right: #{$margin-default-size * $items}px;
+    }
+
+    &-horizontal-#{$margin-default-size * $items} {
+      margin: 0 #{$margin-default-size * $items}px;
+    }
+
+    &-vertical-#{$margin-default-size * $items} {
+      margin: #{$margin-default-size * $items}px 0;
+    }
+  }
+}

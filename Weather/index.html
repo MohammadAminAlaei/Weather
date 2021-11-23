@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/Styles/style.css">
+    <link rel="stylesheet" href="assets/Styles/normalize.css">
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <title>Weather</title>
+</head>
+<body>
+
+<main class="container">
+    <div class="wrapper">
+        <div class="search margin-bottom-24">
+            <label>
+                <input class="search__input" type="search" oninput="handleInputChange(event)" onblur="handleInputBlur()"
+                       onfocus="handleInputFocus()"/>
+            </label>
+            <div class="search__suggestion"></div>
+        </div>
+        <div class="temperature margin-bottom-40">
+            <div class="text-center temperature__degree font-bold">
+                +37&#176;C
+            </div>
+            <figure class="sun">
+                <img src="assets/images/sun.svg" alt="sun"/>
+            </figure>
+            <article class="city-temperature">
+                <h1 class="city-temperature__title"> Dubai, AE </h1>
+                <span class="city-temperature__current-day font-regular"> Thursday </span>
+                <ul class="margin-top-16">
+                    <li class="info">
+                        <figure class="info__icon margin-right-8">
+                            <img src="assets/images/drop.svg" alt="drop">
+                        </figure>
+                        <span class="info__description"> 39% </span>
+                    </li>
+                    <li class="info">
+                        <figure class="info__icon margin-right-8">
+                            <img class="anime" src="assets/images/icons-spinne.png" alt="diamond">
+                        </figure>
+                        <span class="info__description"> West 7.7 m/s </span>
+                    </li>
+                    <li class="info">
+                        <figure class="info__icon margin-right-8">
+                            <img src="assets/images/wave-height.svg" alt="drop">
+                        </figure>
+                        <span class="info__description"> 1003 hPa </span>
+                    </li>
+                </ul>
+            </article>
+        </div>
+        <section>
+            <ul class="cards__wrapper">
+                <li class="card--shadow">
+                    <figure class="card__icon">
+                        <img src="assets/images/sun.svg" alt="sun">
+                    </figure>
+                    <div class="card__title text-center  margin-bottom-24"> Friday</div>
+                    <div class="card__description text-center"> +36 &#176;C</div>
+                </li>
+                <li class="card--shadow">
+                    <figure class="card__icon">
+                        <img src="assets/images/sun.svg" alt="sun">
+                    </figure>
+                    <div class="card__title text-center margin-bottom-24 "> Friday</div>
+                    <div class="card__description text-center"> +36 &#176;C</div>
+                </li>
+                <li class="card--shadow">
+                    <figure class="card__icon">
+                        <img src="assets/images/sun.svg" alt="sun">
+                    </figure>
+                    <div class="card__title text-center margin-bottom-24 "> Friday</div>
+                    <div class="card__description text-center"> +36 &#176;C</div>
+                </li>
+                <li class="card--shadow">
+                    <figure class="card__icon">
+                        <img src="assets/images/sun.svg" alt="sun">
+                    </figure>
+                    <div class="card__title text-center margin-bottom-24 "> Friday</div>
+                    <div class="card__description text-center"> +36 &#176;C</div>
+                </li>
+                <li class="card--shadow">
+                    <figure class="card__icon">
+                        <img src="assets/images/sun.svg" alt="sun">
+                    </figure>
+                    <div class="card__title text-center margin-bottom-24"> Friday</div>
+                    <div class="card__description text-center"> +36 &#176;C</div>
+                </li>
+            </ul>
+        </section>
+    </div>
+</main>
+
+<script src="js/api/city.js"></script>
+<script src="js/api/weather.js"></script>
+<script src="js/App.js"></script>
+</body>
+</html>

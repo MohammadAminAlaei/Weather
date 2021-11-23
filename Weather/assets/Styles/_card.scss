@@ -1,0 +1,58 @@
+$description-color: $secondary-text-color;
+$title-color: $primary-text-color;
+
+.cards__wrapper {
+  display: flex;
+  gap: 1.6rem;
+  flex-direction: column;
+
+  @include tablet-desktop {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @include just-desktop {
+    display: flex;
+    flex-direction: row;
+  }
+
+}
+
+.card {
+  background-color: #6aa9e1;
+  border-radius: $border-radius * 2;
+  box-sizing: border-box;
+  padding: 3.2rem;
+
+  @include just-tablet {
+    width: 30%;
+  }
+
+  @include just-desktop {
+    width: calc(20% - 40px)
+  }
+
+  &--shadow {
+    @extend .card;
+    box-shadow: 0 .5rem 1rem 0 rgba(#000, .1);
+  }
+
+  &__icon {
+    width: 7rem;
+    margin: 2rem auto;
+  }
+
+  &__title {
+    @include font();
+    color: $title-color;
+    font-size: 2.4rem;
+    font-weight: bolder;
+  }
+
+  &__description {
+    color: $description-color;
+    font-size: 1.6rem;
+  }
+}

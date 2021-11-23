@@ -1,0 +1,48 @@
+$input-background-color: rgba(#fff, .3);
+$input-border-color-avtive: #6a93ce;
+$input-border-radius: $border-radius;
+$input-color: #f2f2f2;
+$input-padding-horizontal: 0 $padding;
+$input-height: 5rem;
+
+.search {
+  position: relative;
+
+  &__input {
+    background-color: $input-background-color;
+    border-radius: $input-border-radius;
+    border: .2rem solid transparent;
+    box-sizing: border-box;
+    color: $input-color;
+    height: $input-height;
+    outline: none;
+    padding: $input-padding-horizontal;
+    width: 100%;
+
+    &:focus {
+      border-color: $input-border-color-avtive;
+    }
+
+  }
+
+  &__suggestion {
+    background-color: #fff;
+    border-bottom-left-radius: $input-border-radius;
+    border-bottom-right-radius: $input-border-radius;
+    display: none;
+    overflow-y: auto;
+    left: 0;
+    max-height: 300px;
+    padding: 1.6rem;
+    top: 100%;
+    right: 0;
+    position: absolute;
+    z-index: 50;
+
+    &--active {
+      display: block;
+    }
+  }
+
+}
+

@@ -1,0 +1,14 @@
+.anime {
+  background-color: $secondary-text-color;
+  border-radius: 50%;
+  animation: anime 1s infinite linear;
+}
+
+@keyframes anime {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

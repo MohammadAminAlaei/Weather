@@ -1,0 +1,40 @@
+$font-url: '../fonts';
+$font: 'Roboto';
+$font-name: 'Roboto';
+$font-type: 'ttf';
+$font-format: 'truetype';
+
+@font-face {
+  font-family: '#{$font}';
+  src: url("#{$font-url}/#{$font}/#{$font-name}-Regular.#{$font-type}") format($font-format);
+}
+
+@font-face {
+  font-family: '#{$font}-Bold';
+  src: url("#{$font-url}/#{$font}/#{$font-name}-Bold.#{$font-type}") format($font-format);
+}
+
+@font-face {
+  font-family: '#{$font}-Light';
+  src: url("#{$font-url}/#{$font}/#{$font-name}-Light.#{$font-type}") format('#{$font-format}');
+}
+
+@mixin font($type: '') {
+  @if ($type == '') {
+    font-family: '#{$font}' !important;
+  } @else {
+    font-family: '#{$font}-#{$type}' !important;
+  }
+}
+
+.font-light {
+  font-family: '#{$font}-Light' !important;
+}
+
+.font-bold {
+  font-family: '#{$font}-Bold' !important;
+}
+
+.font-regular {
+  font-family: '#{$font}' !important;
+}
