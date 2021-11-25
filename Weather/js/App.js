@@ -1,4 +1,3 @@
-
 const RECENT_SEARCH = 'SEARCH_CITIES';
 
 const debounced = _.debounce(searchCities, 500)
@@ -39,7 +38,10 @@ function handleInputFocus() {
 async function selectCity(city) {
     const inputElement = document.getElementsByClassName('search__input')[0];
     inputElement.value = city.name;
-    const response = getCurrentWeather(city.id)
+    const response = await getCurrentWeather(city.id)
+    newRes = await response.json()
+    changeCurrentWeatherInfo(newRes)
+    console.log(newRes)
 }
 
 function loadSuggestion(cities) {
@@ -76,5 +78,19 @@ function setRecentSearch(cities) {
     let data = cities.slice(0, 4);
     data = JSON.stringify(data);
     localStorage.setItem(RECENT_SEARCH, data)
+}
+
+function changeCurrentWeatherInfo(weather) {
+    const cityEl = document.querySelector('.city-temperature__title');
+    const degreeEl = document.querySelector('.temperature__degree');
+    const dayEl = document.querySelector('.city-temperature__current-day');
+    const pressureEl = document.querySelector('.pressure');
+    const windEl = document.querySelector('.wind');
+    const humidityEl = document.querySelector('.humidity');
+    const iconEl = document.querySelector('.weather__icon');
+
+    cityEl.innerHTML = `${weather.name}, ${weather.sys.country}`
+    degreeEl.innerHTML = `${weather.main.temp}&#176;C`;
+    iconEl.src = `http://openweathermap.org/img/wn/${weather.weather[0].icon}`;
 }
 
